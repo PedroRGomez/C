@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+  FILE *pont_file;
+  pont_file = fopen("arquivo.txt", "a");
+
+  printf("O arquivo foi criado com sucesso!");
+
+  system("pause");
+    return 0;
+}
