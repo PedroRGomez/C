@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_SIZE 100
+
+int main()
+{
+    char str[MAX_SIZE];
+    int i, j, len;
+    int s_palindromo = 1; // assume que é um palíndromo por padrão
+
+    printf("Digite a frase: ");
+    fgets(str, MAX_SIZE, stdin);
+
+    len = strlen(str) - 1; // desconsidera o caractere nulo no final da string
+
+    for (i = 0, j = len - 1; i < len / 2; i++, j--) {
+        if (str[i] != str[j]) {
+            s_palindromo = 0; // não é
+            break;
+        }
+    }
+
+    if (s_palindromo) {
+        printf("A string é um palíndromo\n");
+    } else {
+        printf("A string não é um palíndromo\n");
+    }
+
+    return 0;
+}
