@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    FILE *fp;
+    char filename[100];
+    int count = 0;
+    char c;
+
+    printf("Entre com o nome do arquivo: ");
+    scanf("%s", filename);
+
+    fp = fopen(filename, "r");
+
+    if (fp == NULL) {
+        printf("Erro ao abrir o arquivo.\n");
+        return 1;
+    }
+
+    while ((c = fgetc(fp)) != EOF) {
+        count++;
+    }
+
+    printf("O arquivo %s contém %d caracteres.\n", filename, count);
+
+    fclose(fp);
+
+    return 0;
+}
