@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <time.h>
+
+int main()
+{
+    time_t tempo_atual;
+    struct tm* info_tempo;
+
+    time(&tempo_atual);
+
+    info_tempo = localtime(&tempo_atual);
+
+    printf("Data e Hora atual: %s", asctime(info_tempo));
+
+    return 0;
+}
